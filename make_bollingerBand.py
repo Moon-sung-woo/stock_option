@@ -14,9 +14,9 @@ data['Standard Deviation'] = end_data.rolling(window=w_size, min_periods=1).std(
 data['UBB'] = data['Moving Average'] + (data['Standard Deviation'] * pb)
 data['LBB'] = data['Moving Average'] - (data['Standard Deviation'] * pb)
 
-print(end_data)
+data.set_index('날짜', inplace=True) # index를 날짜로 설정
 
-data.to_csv('test.csv') # 지끔까지 추가한것들 저장
+#data.to_csv('test.csv') # 지끔까지 추가한것들 저장
 
 data[['종가', 'UBB', 'LBB']].plot()
 plt.show()
