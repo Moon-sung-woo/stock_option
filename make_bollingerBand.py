@@ -5,7 +5,7 @@ w_size = 20 # 볼린져밴드 이동평균 산출 기간
 pb = 2      # 볼린져밴드 승수(percent bendwidth)
 stock_csv = 'test.csv'
 
-data = pd.read_csv(stock_csv)
+data = pd.read_csv(stock_csv)[2:1000]
 end_data = data['종가']
 print(len(data))
 
